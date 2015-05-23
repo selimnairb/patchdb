@@ -3,28 +3,34 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02322DFA1B0EBCC70093D9B6 /* libcassandra.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 02322DF91B0EBCC70093D9B6 /* libcassandra.dylib */; };
 		025145C41B0904CA00906937 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 025145C31B0904CA00906937 /* main.cpp */; };
+		025145CB1B0906E500906937 /* GDAL in Frameworks */ = {isa = PBXBuildFile; fileRef = 025145CA1B0906E500906937 /* GDAL */; };
+		025145CC1B09090D00906937 /* patch_to_map in CopyFiles */ = {isa = PBXBuildFile; fileRef = 025145C01B0904CA00906937 /* patch_to_map */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		025145BE1B0904CA00906937 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 8;
+			dstPath = "";
+			dstSubfolderSpec = 16;
 			files = (
+				025145CC1B09090D00906937 /* patch_to_map in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		02322DF91B0EBCC70093D9B6 /* libcassandra.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcassandra.dylib; path = ../../../../usr/local/lib/libcassandra.dylib; sourceTree = "<group>"; };
 		025145C01B0904CA00906937 /* patch_to_map */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = patch_to_map; sourceTree = BUILT_PRODUCTS_DIR; };
 		025145C31B0904CA00906937 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		025145CA1B0906E500906937 /* GDAL */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = GDAL; path = ../../../../Library/Frameworks/GDAL.framework/Versions/1.11/GDAL; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +38,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02322DFA1B0EBCC70093D9B6 /* libcassandra.dylib in Frameworks */,
+				025145CB1B0906E500906937 /* GDAL in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +49,8 @@
 		025145B71B0904CA00906937 = {
 			isa = PBXGroup;
 			children = (
+				02322DF91B0EBCC70093D9B6 /* libcassandra.dylib */,
+				025145CA1B0906E500906937 /* GDAL */,
 				025145C21B0904CA00906937 /* patch_to_map */,
 				025145C11B0904CA00906937 /* Products */,
 			);
@@ -97,7 +107,7 @@
 				};
 			};
 			buildConfigurationList = 025145BB1B0904CA00906937 /* Build configuration list for PBXProject "patch_to_map" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -205,14 +215,34 @@
 		025145C81B0904CA00906937 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks/GDAL.framework/Versions/1.11",
+					/usr/local/lib,
+				);
+				"LIBRARY_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks/GDAL.framework/Versions/1.11",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = "/Library/Frameworks/GDAL.framework/Versions/1.11/Headers /usr/local/include";
 			};
 			name = Debug;
 		};
 		025145C91B0904CA00906937 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks/GDAL.framework/Versions/1.11",
+					/usr/local/lib,
+				);
+				"LIBRARY_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks/GDAL.framework/Versions/1.11",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = "/Library/Frameworks/GDAL.framework/Versions/1.11/Headers /usr/local/include";
 			};
 			name = Release;
 		};
@@ -235,6 +265,7 @@
 				025145C91B0904CA00906937 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
